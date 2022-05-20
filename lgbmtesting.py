@@ -134,7 +134,7 @@ load = lightgbm.Booster(model_file='lgbm_model.txt')
 pred = load.predict(df[column], categorical_feature=categories)
 label = []
 for p in pred:
-    if p >= 0.5:
+    if p > 0.5:
         label.append(1)
     else:
         label.append(0)
